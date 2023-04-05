@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>San Prastiwa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="hero">
+      <nav>
+        <h1>San<span>Prastiwa</span></h1>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="portofolio.html">Project</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="navbar"></div>
+      </nav>
+
+      <div class="heading-detail">
+        <h1>Fullstack types with Postgres, Hasura GraphQL and Typescript</h1>
+        <h2>#Background</h2>
+        <div class="desc-blog">
+          <p>
+            I started working at Crowdcast in March 2020, just a week before the
+            first Covid lockdown started in Germany. Crowdcast is an online
+            platform for running live video events and building a community
+            around it. The lockdowns led to a sudden spike in demand for live
+            video events, so Crowdcast saw loads of new signups and a
+            significant increase in traffic.
+          </p>
+          <br />
+
+          <p>
+            The stack Crowdcast was ran on was a client side application written
+            in Angular 1.x. and a monolithic API written in Node.js (express),
+            both hosted on Heroku.
+          </p>
+
+          <p>
+            During that time there were two main data stores: Firebase realtime
+            database and a MongoDB cluster. Both of those data stores are
+            document-based and they were completely encapsulated from each
+            other, so there was no relational integrity and they had to be kept
+            in sync using background jobs.
+          </p>
+          <br />
+
+          <p>
+            Especially the Firebase realtime database proved itself as a
+            bottleneck: Too often we found ourselves in a situation where it
+            showed 100% load and became unresponsive, meaning that any requests
+            relying on it could not be served anymore. And it could not be
+            scaled up any further, their “pay-as-you-go” plan was the only
+            option they offered.
+          </p>
+          <br />
+
+          <p>
+            Weve already spend a serious amount of time trying to mitigate the
+            issue by using caching but the core problem remained: Firebase would
+            eventually reach 100% capacity and block any new requests for a
+            couple of minutes.
+          </p>
+          <br />
+
+          <p>
+            From a business perspective this was a nightmare for us. Running an
+            online live event platform we needed to ensure full availability
+            around the clock. If we had one high-scale event (more than 10k live
+            users was usually considered our danger zone), this could bring down
+            the entire platform for a couple of minutes and thus affect all live
+            events that were running during that time period. So we decided to
+            rewrite the entire application from scratch using a more modern
+            technology stack that would meet our requirements and serve us well
+            in the future.
+          </p>
+          <br />
+
+          <p>
+            I was given the opportunity to come up with the architecture for
+            that new platform. Keeping in mind the scaling problems we were
+            experiencing previously, it was essential that this new stack would
+            allow us not only to exceed the current traffic requirements but
+            also to grow far into the future with us. Our bold goals for
+            Crowdcast were live events with more than 100k users, which would be
+            a 10x from our current user limit.
+          </p>
+          <br />
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="social">
+        <a
+          href="https://github.com/SanPrastiwa?tab=repositories"
+          target="_blank"
+          ><i class="bx bxl-github"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/san-prastiwa-1b5a8a244/"
+          target="_blank"
+          ><i class="bx bxl-linkedin"></i
+        ></a>
+        <a href="https://www.instagram.com/sanprstw/" target="_blank"
+          ><i class="bx bxl-instagram"></i
+        ></a>
+      </div>
+
+      <ul class="list">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="portofolio.html">Project</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <p class="copyright">San Prastiwa @ 2023</p>
+    </section>
+  </body>
+</html>
